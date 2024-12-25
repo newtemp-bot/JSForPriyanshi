@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Jump Case</title>
+    </head>
+    <body>
+        <script>
+            /* while (true)
+            {
+                console.log("outer 1");
+                while (true)
+                {
+                    console.log("inner 1");
+                    break;
+                }
+                console.log("outer 1");
+                break;
+                while (true)
+                {
+                    console.log("inner 2");
+                    break;
+                }
+            } */
+
+            /* while (true) {
+                console.log("outer 1");
+                for (let i = 0; i < 3; i++) {
+                    console.log("inner for loop, iteration " + i);
+                    if (i === 1) {
+                        break;
+                    }
+                    while (true) {
+                        console.log("inner while loop");
+                        break;
+                    }
+                }
+                console.log("outer 2");
+                if (Math.random() > 0.5) {
+                    break;
+                }
+                while (true) {
+                    console.log("inner 2");
+                    if (Math.random() > 0.5) {
+                        break;
+                    }
+                }
+            } */
+        </script>
+        <script>
+            /* function generateRandomNumber() {
+                return Math.floor(Math.random() * 3) + 1;
+            }
+
+            console.log("Random number: " + generateRandomNumber()); */
+            /* while (true) {
+                console.log("outer 1");
+                for (let i = 0; i < 3; i++) {
+                    console.log("inner for loop, iteration " + i);
+                    if (i === 2) {
+                        break;
+                    }
+                    while (true) {
+                        console.log("inner while loop 1");
+                        if (i === 1) {
+                            break;
+                        }
+                        i++;
+                    }
+                }
+                console.log("outer 2");
+                break;
+                do {
+                    console.log("inner do-while loop");
+                    break;
+                } while (true);
+                while (true) {
+                    console.log("inner while loop 2");
+                    break;
+                }
+            } */
+
+            /* let i = 0;
+            while (i < 5) {
+                if (i==3) {
+                    i++;
+                    continue;
+                }
+                console.log(i);
+                i++;
+            } */
+
+            while (true) {
+                console.log("o1");
+                for (let i = 0; i < 5; i++) {
+                    if (i % 2 === 0) {
+                        continue;
+                    }
+                    console.log("ifli" + i);
+                    if (i === 4) {
+                        break;
+                    }
+                    while (true) {
+                        console.log("iwl1");
+                        if (i === 3) {
+                            break;
+                        }
+                        for (let j = 0; j < 3; j++) {
+                            console.log("infli" + j);
+                            if (j === 2) {
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                }
+                console.log("o2");
+                break;
+            }
+        </script>
+    </body>
+</html>

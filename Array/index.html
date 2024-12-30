@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Array</title>
+    </head>
+    <body>
+        <script>
+            /* let a = [10,20,30,40,50,60];
+            console.log(a[1]);
+        for (let i = 0; i < a.length; i++) {
+            console.log(a[i]+10);
+        } */
+            /* let a = [];
+            a[0] = 10;
+            a[1] = 20;
+            a[2] = 30;
+            console.log(a); */
+
+            /* let n = parseInt(prompt("Enter Number how much you want to insert = "));
+            let a = [];
+            for (let i = 0; i < n; i++) {
+                a[i] = parseInt(prompt(`Enter ${i+1} value`));
+            }
+            
+            console.log(a); */
+
+            let a = [[10,20,30],[40,50,60],[70,80,90]]
+
+            console.log(a[1][2]);
+            /* for (let row = 0; row < a.length; row++) {
+                let str = "";
+                for (let col = 0; col < a[row].length; col++) {
+                    str += " "+(a[row][col]);
+                }
+                console.log(str);
+            } */
+           console.table(a);
+           /* for (let row = 0; row < a.length; row++) {
+                for (let col = 0; col < a[row].length; col++) {
+                    document.write(a[row][col] + " ");
+                }
+                document.writeln("</br>");
+            } */
+
+            let n = 3;
+
+            for (let row = 0; row < n; row++) {
+                for (let col = 0; col <= row; col++) {
+                    document.write("* ");
+                }
+                document.writeln("</br>");
+            }
+            document.writeln("</br>");
+            document.writeln("</br>");
+            document.writeln("</br>");
+            for (let row = 0; row < n; row++) {
+                for (let col = n; col > row; col--) {
+                    document.write("* ");
+                }
+                document.writeln("</br>");
+            }
+            document.writeln("</br>");
+            document.writeln("</br>");
+            document.writeln("</br>");
+            for (let row = 0; row < n; row++) {
+                for (let col = n; col > row; col--) {
+                    document.write("&nbsp;&nbsp;&nbsp;");
+                }
+                for (let col = 0; col <= row; col++) {
+                    document.write("* ");
+                }
+                document.writeln("</br>");
+            }
+            document.writeln("</br>");
+            document.writeln("</br>");
+            document.writeln("</br>");
+            for (let row = 0; row < n; row++) {
+                for (let col = 0; col <= row; col++) {
+                    document.write("&nbsp;&nbsp;&nbsp;");
+                }
+                for (let col = n; col > row; col--) {
+                    document.write("* ");
+                }
+                document.writeln("</br>");
+            }
+            
+
+        </script>
+    </body>
+</html>

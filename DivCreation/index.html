@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dynamic Circular Hover Effect</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: "Arial", sans-serif;
+                background-color: #ecf0f1;
+                display: grid;
+                place-items: center;
+                min-height: 100vh;
+            }
+            #demo {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+                padding: 20px;
+                width: 100%;
+                max-width: 1200px; /* Optional: limit the maximum width */
+            }
+            .dynamic-div {
+                position: relative;
+                border: none;
+                border-radius: 8px;
+                padding: 20px;
+                background-color: #bdc3c7;
+                overflow: hidden;
+                transition: transform 0.2s;
+                color: #2c3e50;
+                text-align: center;
+            }
+            .dynamic-div:hover {
+                transform: translateY(-5px);
+            }
+            .dynamic-div::before {
+                content: "";
+                position: absolute;
+                top: var(--y); /* Start point for fade */
+                left: var(--x); /* Start point for fade */
+                width: 0;
+                height: 0;
+                border-radius: 50%; /* Ensure circular shape */
+                background: rgba(52, 152, 219, 0.6); /* Semi-transparent blue */
+                transform: translate(-50%, -50%);
+                z-index: -1;
+                transition: width 0.4s, height 0.4s, opacity 0.4s;
+                opacity: 0;
+            }
+            .dynamic-div:hover::before {
+                width: 300%;
+                height: 300%;
+                opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="demo"></div>
+        <script>
+            // Populate dynamic divs
+            const demo = document.getElementById("demo");
+            const studentNames = ["Alice", "Bob", "Charlie", "David", "Eve", "Frank", "Grace", "Hannah", "Ivy", "Jack"];
+
+            studentNames.forEach(name => {
+                demo.innerHTML += `<div class="dynamic-div">${name}</div>`;
+            });
+
+            /* // Add hover effect with dynamic coordinates
+            document.querySelectorAll(".dynamic-div").forEach(div => {
+                div.addEventListener("mouseenter", (e) => {
+                    const rect = div.getBoundingClientRect();
+                    const x = `${e.clientX - rect.left}px`; // X position in pixels relative to the div
+                    const y = `${e.clientY - rect.top}px`;  // Y position in pixels relative to the div
+
+                    // Dynamically set the CSS variables
+                    div.style.setProperty("--x", x);
+                    div.style.setProperty("--y", y);
+                });
+            }); */
+        </script>
+    </body>
+</html>

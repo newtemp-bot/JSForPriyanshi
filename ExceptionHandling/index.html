@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Exception</title>
+    </head>
+    <body>
+        <script>
+            /* try{
+            addalert("Hello");
+            }
+            catch(err)
+            {
+                console.log(err);
+            } */
+            let message = "";
+            let x = prompt("Enter any text");
+            try {
+                if (x.trim() == "") throw "empty";
+                if (isNaN(x)) throw "not a number";
+                x = Number(x);
+                if (x < 5) throw "too low";
+                if (x > 10) throw "too high";
+            } catch (err) {
+                message = "Input is " + err;
+                console.log(message);
+            }
+            finally{
+                console.log("Run Always");
+            }
+            
+            let t = 10,
+                y = 2;
+            console.log(t / y);
+        </script>
+    </body>
+</html>

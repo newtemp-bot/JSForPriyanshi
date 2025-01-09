@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Success</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --color-primary-50: #eff6ff;
+                --color-primary-500: #3b82f6;
+                --color-primary-700: #1d4ed8;
+            }
+
+            body {
+                font-family: "Roboto", ui-sans-serif, system-ui, -apple-system,
+                    "Segoe UI", Arial, sans-serif;
+            }
+
+            .text-primary {
+                color: var(--color-primary-500);
+            }
+
+            .bg-primary {
+                background-color: var(--color-primary-500);
+            }
+
+            .dark .bg-primary {
+                background-color: var(--color-primary-700);
+            }
+        </style>
+    </head>
+    <body class="bg-gray-50 dark:bg-gray-900">
+        <section class="flex items-center justify-center min-h-screen px-6">
+            <div
+                class="w-full max-w-md bg-white rounded-lg shadow-md dark:bg-gray-800"
+            >
+                <div class="p-6 space-y-6 text-center">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        class="w-16 h-16 mx-auto"
+                        fill="none"
+                    >
+                        <circle cx="12" cy="12" r="10" fill="#3b82f6" />
+                        <path
+                            d="M10 15l-3-3 1.414-1.414L10 12.172l5.586-5.586L17 8l-7 7z"
+                            fill="#fff"
+                        />
+                    </svg>
+
+                    <h1
+                        class="text-2xl font-bold text-gray-900 dark:text-white"
+                    >
+                        Success!
+                    </h1>
+                    <p class="text-gray-500 dark:text-gray-400">
+                        You have successfully logged in or signed up.
+                    </p>
+                    <a
+                        href="/"
+                        class="inline-block px-4 py-2 mt-4 text-white bg-primary hover:bg-primary-700 rounded-lg"
+                    >
+                        Go to Homepage
+                    </a>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

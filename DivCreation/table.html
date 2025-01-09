@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Theme Table</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .dark-table {
+            background-color: #1e293b; /* Dark background for the table */
+            border-radius: 8px;
+            overflow: hidden;
+            color: #ffffff;
+        }
+
+        .dark-header {
+            background-color: #334155; /* Slightly lighter dark background for header */
+            color: #cbd5e1; /* Subtle white for header text */
+            text-align: center;
+            font-weight: bold;
+            border-bottom: #ffffff solid 3px;
+        }
+
+        .dark-cell {
+            color: #e2e8f0; /* Softer white for cell text */
+            border-top: 1px solid #475569; /* Subtle border for row separation */
+        }
+
+        .hover-effect:hover {
+            background-color: #475569; /* Slight highlight on hover */
+            transition: background-color 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="container mx-auto p-6" style="max-width: 800px;">
+        <table class="min-w-full dark-table">
+            <thead>
+                <tr>
+                    <th colspan="5" class="py-3 px-4 dark-header text-center font-semibold">Table of <span id="number">1</span></th>
+                </tr>
+            </thead>
+            <tbody id="tableValue">
+                <!-- Dynamic content will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        let number = 25; // Change this number to dynamically create the table for any number
+        let numberText = document.getElementById("number");
+        let tablebody = document.getElementById("tableValue");
+        let str = "";
+        for (let i = 1; i <= 10; i++) {
+            str += `<tr class="hover-effect">
+                        <td class="py-3 px-4 text-center dark-cell">${number}</td>
+                        <td class="py-3 px-4 text-center dark-cell font-bold">X</td>
+                        <td class="py-3 px-4 text-center dark-cell">${i}</td>
+                        <td class="py-3 px-4 text-center dark-cell font-bold">=</td>
+                        <td class="py-3 px-4 text-center dark-cell font-bold">${number * i}</td>
+                    </tr>`;
+        }
+        numberText.innerText = number;
+        tablebody.innerHTML = str;
+    </script>
+</body>
+</html>

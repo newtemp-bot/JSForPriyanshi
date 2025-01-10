@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Alert</title>
+    </head>
+    <body>
+        <script>
+            let st =  setTimeout(function () {
+                alert("hello");
+            }, 5000);
+            let si = setInterval(() => {
+                alert("Hii");
+            }, 1000);
+            setTimeout(function () {
+                clearTimeout(st);
+                clearInterval(si);
+            },6000)
+        </script>
+    </body>
+</html>

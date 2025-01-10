@@ -109,6 +109,9 @@
                                 Please enter a valid password.
                             </p>
                         </div>
+                        <p id="login-error" class="text-red-500 text-sm mt-2 hidden">
+                            Invalid username or password.
+                        </p>
                         <div class="flex items-center justify-between">
                             <label
                                 class="flex items-center text-sm text-gray-900 dark:text-white"
@@ -172,10 +175,14 @@
                 const password = document.getElementById("password").value;
                 const emailError = document.getElementById("email-error");
                 const passError = document.getElementById("pass-error");
+                const loginError = document.getElementById("login-error");
                 const emailPattern =
                     /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
                 const passwordPattern =
                     /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+
+                const validEmail = "test@gmail.com";
+                const validPassword = "Test@123"; 
 
                 if (!emailPattern.test(email)) {
                     emailError.classList.remove("hidden");
@@ -190,8 +197,14 @@
                 ) {
                     emailError.classList.add("hidden");
                     passError.classList.add("hidden");
-                    alert("Form Submitted Successfully!");
-                    form.submit();
+
+                    if (email === validEmail && password === validPassword) {
+                        loginError.classList.add("hidden");
+                        alert("Form Submitted Successfully!");
+                        form.submit();
+                    } else {
+                        loginError.classList.remove("hidden");
+                    }
                 }
             });
         </script>

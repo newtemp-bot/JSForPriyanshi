@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Object</title>
+    </head>
+    <body>
+        <script>
+            /* let person = {};
+            person.firstname = "hello";
+            person.age = 50; */
+            let student = {
+                firstname: "Ashok",
+                lastname: "Prajapati",
+                age: 24,
+                dob: "2001-06-19",
+            };
+
+            console.table(student);
+            /* console.table(person); */
+
+            const person = { fname: "John", lname: "Doe", age: 25 };
+            console.log(person["lname"]);
+
+            let text = "";
+            for (let x in person) {
+                text += person[x] + " ";
+            }
+            console.log(text);
+
+            let arr = [10, 20, 30, , , 60, , , 20];
+            let arr2 = [40, 63, 90, , , 60, , , 20];
+            for (let i in arr) {
+                console.log(arr[i]);
+            }
+
+            let arrstr = arr + arr2;
+            let arr3 = arr.concat(arr2);
+
+            arr3[5] = 90;
+
+            arr3.fill("Jadu", 6, 9);
+
+            console.log(typeof arr3);
+            console.log(arr3);
+
+            let age = [25, 18, 17, 16, 15, 60];
+
+            let filterage = age.filter((value) => (value>=18));
+
+            console.log(filterage);
+
+            filterage.forEach((value)=>{
+                console.log(value+10);                
+            })
+
+           let sqrtage = filterage.map(Math.sqrt)
+           
+           console.log(sqrtage);
+
+           sqrtage.pop(2);
+
+           console.log(sqrtage);
+           
+
+           sqrtage.push("hello")
+           
+           console.log(sqrtage);
+
+           sqrtage.shift()
+
+           console.log(sqrtage);
+
+           let slicearr = arr3.slice(3,9)
+
+           console.log(slicearr);
+
+           arr3.sort();
+
+           console.log(arr3);
+           
+           arr3.reverse();
+
+           console.log(arr3);
+           
+            
+        </script>
+    </body>
+</html>

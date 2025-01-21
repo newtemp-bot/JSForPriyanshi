@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Local Strorage</title>
+    </head>
+    <body>
+        <script>
+            const getStd = () => {
+                let std = {};
+                let fname = prompt("Enter Your Firstname = ");
+                let lname = prompt("Enter Your Lastname = ");
+                std.fname = fname;
+                std.lname = lname;
+                return std;
+            };
+            if(localStorage.getItem("std") === null)
+            {
+                let std = getStd();
+                if (std != {}) {
+                    localStorage.setItem("std", JSON.stringify(std));
+                }
+            }
+            else
+            {
+                let std = JSON.parse(localStorage.getItem("std"))
+                console.log(std);
+            }
+
+
+
+        </script>
+    </body>
+</html>

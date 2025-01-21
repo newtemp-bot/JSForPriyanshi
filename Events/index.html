@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Events</title>
+        <style>
+            .hover-box {
+                width: 200px;
+                height: 100px;
+                background-color: lightblue;
+                display: none;
+                position: absolute;
+                top: 50px;
+                left: 50px;
+                border: 1px solid #000;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- onmouseover="divhover()"
+            onmouseleave="divleave()" -->
+        <div
+            onclick="divclick()"
+        >
+            Hover On ME
+        </div>
+        <div id="hoverbox" class="hover-box">
+            <p>This is a hover box.</p>
+        </div>
+        <script>
+            let hoverbox = document.getElementById("hoverbox");
+            /* function divhover() {
+                hoverbox.style.display = "block";
+            }
+            function divleave() {
+                hoverbox.style.display = "none";
+            } */
+            function divclick() {
+                if (hoverbox.style.display !== "block")
+                    hoverbox.style.display = "block";
+                else hoverbox.style.display = "none";
+            }
+        </script>
+    </body>
+</html>

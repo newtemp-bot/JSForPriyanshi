@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Window</title>
+    </head>
+    <body>
+        <div id="demo"></div>
+        <script>
+            let i = 0;
+            function resizeHandler() {
+                var width = window.innerWidth;
+                var height = window.innerHeight;
+                i++;
+                var text = "Width: " + width + ", Height: " + height;
+                document.getElementById("demo").innerHTML = text;
+                if (i == 50) {
+                    window.removeEventListener("resize", resizeHandler);
+                    console.log("Event Removed");
+                }
+            }
+            window.addEventListener("resize", resizeHandler);
+        </script>
+    </body>
+</html>

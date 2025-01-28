@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <title>Ajax</title>
+    </head>
+    <body onload="calldata()">
+        <div id="putdata"></div>
+        <script>
+            let calldata = () => {
+                /* const xhr = new XMLHttpRequest();
+                xhr.open("GET", "https://dummyjson.com/products");
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        console.log(xhr);
+                        
+                        const data = JSON.parse( xhr.responseText);
+                        console.log(data);
+                        
+                        document.getElementById("putdata").innerHTML = data
+                    } else {
+                        document.getElementById("putdata").textContent = "Error loading data.";
+                    }
+                };
+                xhr.send(); */
+                /* fetch("https://dummyjson.com/products")
+                    .then((res) => res.json())
+                    .then(console.log); */
+                $.ajax({
+                    url: "test.txt",
+                    success: function (result) {
+                        $("#putdata").html(result);
+                    },
+                });
+            };
+        </script>
+    </body>
+</html>
